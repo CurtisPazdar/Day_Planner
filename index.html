@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+
+
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-12" id="appendingColumn">
+    </div>
+    <!-- <script = src = "text/javascript">
+
+    </script> -->
+
+  
+<script = src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+
+//Create an array to hold the available time slots. 
+
+var timeArray = ["9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm"]
+
+//For loop that iterates through the area and creates a table element for each on the values in timeArray.
+
+  for (var i = 0; i < timeArray.length; i++) {
+
+    
+    var tableSlot1 = $("<td class = tableSlot1 scope=col col-3>");
+    var tableSlot2 = $("<textarea class = tableSlot2 scope=col col-6>");
+    var tableSlot3 = $("<button class = tableSlot3 scope=col col-3>");
+    var timeBlock = $("<table class = table id = timeBlock scope=col>");
+    timeBlock.attr("data-letter", timeArray[i]);
+    $("#appendingColumn").append(timeBlock);
+    $(timeBlock).append(tableSlot1);
+    $(timeBlock).append(tableSlot2);
+    $(timeBlock).append(tableSlot3);
+    tableSlot1.text(timeArray[i]);
+    tableSlot3.text("Save");
+
+}
+
+
+
+$(".tableSlot3").on("click", function (){
+
+  var textArea = $(".tableSlot2")
+
+  localStorage.setItem("Saved Events",textArea.val())
+
+  
+});
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+<script src="Moment.js"></script>
+<script>
+
+
+    var currentDayEntry = document.querySelector("#currentDay");
+    var displayDay = moment().format('dddd, MMMM Do');
+    currentDayEntry.textContent = displayDay;
+
+  
+
+
+  
+
+
+
+
+</script>
+
+
+
+    <script src="Moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <scriptr src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></scriptr>
+  </body>
+</html>
